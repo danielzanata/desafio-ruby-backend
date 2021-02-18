@@ -10,9 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_02_18_010508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "tipo_transacaos", force: :cascade do |t|
+    t.integer "tipo", limit: 2
+    t.string "descricao", limit: 20
+    t.string "natureza", limit: 10
+    t.string "sinal", limit: 1
+  end
+
+  create_table "transacaos", force: :cascade do |t|
+    t.bigint "tipo_transacao_id"
+    t.date "data_ocorrencia"
+    t.float "valor_movimentacao"
+    t.string "cpf", limit: 11
+    t.string "cartao", limit: 12
+    t.date "hora_ocorrencia"
+    t.string "nome_representante", limit: 20
+    t.string "nome_loja", limit: 20
+    t.index ["tipo_transacao_id"], name: "index_transacaos_on_tipo_transacao_id"
+  end
+
+  add_foreign_key "transacaos", "tipo_transacaos"
 end

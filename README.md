@@ -103,6 +103,7 @@ Boa sorte!
     - Utilizei 'postgres' como password, caso queira alterar terá também que alterar no arquivo config/database.yml
 
 5. Rodar comandos do Rails
+    - bundle
     - rails db:setup
     - rails db:migrate
 
