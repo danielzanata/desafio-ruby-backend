@@ -106,6 +106,7 @@ Boa sorte!
     - bundle
     - rails db:setup
     - rails db:migrate
+    - rails db:seed
 
     - rails s (Para dar start na aplicação)
 

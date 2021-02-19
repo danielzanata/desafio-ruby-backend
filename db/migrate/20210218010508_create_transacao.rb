@@ -6,11 +6,11 @@ class CreateTransacao < ActiveRecord::Migration[5.2]
       t.float :valor_movimentacao, limit: 10
       t.string :cpf, limit: 11
       t.string :cartao, limit: 12
-      t.date :hora_ocorrencia
+      t.timestamp :hora_ocorrencia
       t.string :nome_representante, limit: 20
       t.string :nome_loja, limit: 20
 
-      t.timestamp
+      t.timestamps
     end
   end
 end

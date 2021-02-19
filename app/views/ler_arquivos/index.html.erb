@@ -1,0 +1,5 @@
+<%= form_with url: "/ler_arquivos/ler_arquivo", multipart: true do |form| %>
+    <%= form.file_field :arquivo %>
+    <%= form.submit "Enviar" %>
+  <% end %>
+  
